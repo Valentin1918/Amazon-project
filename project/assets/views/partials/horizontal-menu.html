@@ -1,0 +1,24 @@
+<!-- start: HORIZONTAL MENU -->
+<div class="horizontal-menu-wrapper" ng-model="horizontalNavbarCollapsed">
+	<div class="horizontal-nav-container">
+		<ul class="nav navbar-nav no-border">
+			<li ui-sref-active="active">
+				<a ui-sref="app.home">
+					<div class="item-content">
+						<div class="item-inner">
+							<span class="title"> Home </span>
+						</div>
+					</div>
+				</a>
+			</li>
+
+		</ul>
+	</div>
+	<!-- start: MENU TOGGLER FOR MOBILE DEVICES -->
+	<div class="close-handle visible-xs-block visible-sm-block menu-toggler" ng-click="menuInit(true)" ng-swipe-up="menuInit(true)">
+		<div class="arrow-left"></div>
+		<div class="arrow-right"></div>
+	</div>
+	<!-- end: MENU TOGGLER FOR MOBILE DEVICES -->
+</div>
+<!-- end: HORIZONTAL MENU -->

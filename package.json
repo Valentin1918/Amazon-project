@@ -1,0 +1,28 @@
+{
+  "name": "Amazon-project",
+  "version": "1.0.0",
+  "description": "Amazon project made with AngularJS and Bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "AngularJS",
+    "Bootstrap",
+    "Amazon"
+  ],
+  "author": "Grekulov Valentyn",
+  "license": "ISC",
+  "bugs": {
+    "url": "../issues"
+  },
+  "homepage": "",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  }
+}

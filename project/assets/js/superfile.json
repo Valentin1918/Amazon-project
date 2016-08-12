@@ -1,0 +1,12 @@
+[
+  {"value": "Something 0", "name": "string", "img": "assets/images/list/0.png", "id": "0"},
+  {"value": "Something 1", "name": "string", "img": "assets/images/list/1.png", "id": "1"},
+  {"value": "Something 2", "name": "string", "img": "assets/images/list/2.png", "id": "2"},
+  {"value": "Something 3", "name": "string", "img": "assets/images/list/3.png", "id": "3"},
+  {"value": "Something 4", "name": "string", "img": "assets/images/list/4.png", "id": "4"},
+  {"value": "Something 5", "name": "string", "img": "assets/images/list/5.png", "id": "5"},
+  {"value": "Something 6", "name": "string", "img": "assets/images/list/6.png", "id": "6"},
+  {"value": "Something 7", "name": "string", "img": "assets/images/list/7.png", "id": "7"},
+  {"value": "Something 8", "name": "string", "img": "assets/images/list/8.png", "id": "8"},
+  {"value": "Something 9", "name": "string", "img": "assets/images/list/9.png", "id": "9"}
+]
