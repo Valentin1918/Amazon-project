@@ -1,11 +1,15 @@
-app.controller('HomePage', ['$scope', '$rootScope', '$cookies', '$location', 'httpGetQuery', function($scope, $rootScope, $cookies, $location, httpGetQuery) {
-
+app.controller('HomePage', ['$scope', '$http', '$interval', function($scope, $http, $interval) {
     $scope.fileName = 'superfile';
-    $scope.someDataPromiseGet = httpGetQuery.getData('assets/js/' + $scope.fileName + '.json');
-    $scope.someDataPromiseGet.then(function(value) {
-        console.log('object is retrieved, reply is:');
-        console.log(value); //{"value": "", "img": "", "id": "123", "name": "string"}
-        $scope.someData = value;
-    });
-    
+    $scope.someData = [];
+    $scope.updateSomeData = function() {
+        $http({
+            method: 'GET',
+            url: 'assets/js/' + $scope.fileName + '.json'
+        }).then(function successCallback(response) {
+            $scope.someData = response.data;
+        }, function errorCallback(response) {
+            console.log(response);
+        });
+    };
+    $interval($scope.updateSomeData, 1000);
 }]);
