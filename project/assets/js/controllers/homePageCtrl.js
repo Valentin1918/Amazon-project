@@ -4,9 +4,18 @@ app.controller('HomePage', ['$scope', '$http', '$interval', function($scope, $ht
     $scope.updateSomeData = function() {
         $http({
             method: 'GET',
-            url: 'assets/js/' + $scope.fileName + '.json'
+            url: 'assets/js/' + $scope.fileName + '.txt'
         }).then(function successCallback(response) {
-            $scope.someData = response.data;
+            var answer = response.data.trim();
+            var cutCommas = function() {
+                if(answer[answer.length - 1] === ',') {
+                    answer = answer.substr(0, answer.length - 1);
+                    cutCommas();
+                }
+            };
+            cutCommas();
+            var answer = '[' + answer + ']';
+            $scope.someData = JSON.parse(answer);
         }, function errorCallback(response) {
             console.log(response);
         });
