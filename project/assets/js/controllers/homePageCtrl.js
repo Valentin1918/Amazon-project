@@ -1,19 +1,21 @@
-app.controller('HomePage', ['$scope', '$http', '$interval', function($scope, $http, $interval) {
-
+app.controller('HomePage', ['$scope', '$http', '$interval', '$location', function($scope, $http, $interval, $location) {
+    $location.search('fileName', 'superfile');
     /*
-     ??????, ??????? ??? ????? ?? var1.
-     var fileName = $_GET('fileName');
-     ? ?????? ?? URL:
-     http://192.168.2.1/index.html?fileName=superfile.txt
-     */
+    http://192.168.2.1/index.html?fileName=superfile.txt
 
     function $_GET(q,s) {
+        console.log(window.location);
         s = s ? s : window.location.search;
-        var re = new RegExp('&'+q+'(?:=([^&]*))?(?=&|$)','i');
-        return (s=s.replace(/^?/,'&').match(re)) ? (typeof s[1] == 'undefined' ? '' : decodeURIComponent(s[1])) : undefined;
+        var re = new RegExp('&' + q + '(?:=([^&]*))?(?=&|$)','i');
+        return (s = s.replace(/^?/,'&').match(re)) ? (typeof s[1] == 'undefined' ? '' : decodeURIComponent(s[1])) : undefined;
     }
-    
-    $scope.fileName = $_GET('fileName'); //'superfile'
+     */
+    var searchObject = $location.search();
+    console.log(searchObject.fileName);
+    //$scope.fileName = 'superfile';
+    //$scope.fileName = $_GET('fileName'); //'superfile'
+    $scope.fileName =  searchObject.fileName;
+    console.log($scope.fileName);
     $scope.someData = [];
     $scope.updateSomeData = function() {
         $http({
